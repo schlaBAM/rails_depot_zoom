@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :line_items
-  resources :carts
+  resources :carts #TODO - change to cart? and remove cart_id
   root 'store#index', as: 'store_index'
 
   resources :products
