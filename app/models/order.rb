@@ -1,10 +1,11 @@
+# frozen_string_literal: true
 class Order < ApplicationRecord
   has_many :line_items, dependent: :destroy
 
   enum pay_type: {
-      'Cheque' => 1,
-      'Credit card' => 2,
-      'Purchase order' => 3
+    'Cheque' => 1,
+    'Credit card' => 2,
+    'Purchase order' => 3,
   }
 
   validates :name, :address, :email, presence: true
@@ -16,5 +17,4 @@ class Order < ApplicationRecord
       line_items << item
     end
   end
-
 end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
@@ -37,8 +38,8 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "check image url" do
-    ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg http://a.b.c/x/y/z/fred.gif }
-    bad = %w{ fred.doc fred.gif/more fred.gif.more }
+    ok = %w{fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg http://a.b.c/x/y/z/fred.gif}
+    bad = %w{fred.doc fred.gif/more fred.gif.more}
 
     ok.each do |url|
       assert new_product(url).valid?, "#{url} should be valid"

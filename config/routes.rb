@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 Rails.application.routes.draw do
-
   resources :line_items, :carts, :orders
   resources :products do
     get :who_bought, on: :member

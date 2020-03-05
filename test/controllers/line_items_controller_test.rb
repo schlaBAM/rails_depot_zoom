@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'test_helper'
 
 class LineItemsControllerTest < ActionDispatch::IntegrationTest
@@ -17,7 +18,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create line_item' do
     assert_difference('LineItem.count') do
-      post line_items_url, params: {product_id: products(:ruby).id }
+      post line_items_url, params: { product_id: products(:ruby).id }
     end
 
     follow_redirect!
@@ -51,9 +52,9 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create line_item via ajax' do
     assert_difference('LineItem.count') do
-      post line_items_url, params: { product_id: products(:ruby).id}, xhr: true
+      post line_items_url, params: { product_id: products(:ruby).id }, xhr: true
     end
     assert_response :success
-    assert_match /<tr class=\\"line-item-highlight/, @response.body
+    assert_match(/<tr class=\\"line-item-highlight/, @response.body)
   end
 end
