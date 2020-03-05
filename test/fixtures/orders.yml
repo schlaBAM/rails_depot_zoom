@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Raymond Holt
+  address: 99 - 45392 SuperCrazyLongAddress Street, LongCityville BC V1Y2K8
+  email: doubledukes@outlook.com
+  pay_type: Cheque
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString
+  pay_type: 1

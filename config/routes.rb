@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :line_items, :carts, :products
+  resources :line_items, :carts, :orders
+  resources :products do
+    get :who_bought, on: :member
+  end
 
   root 'store#index', as: 'store_index'
 
