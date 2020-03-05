@@ -6,6 +6,9 @@
   display: inline-flex;
   form {
     margin-right: 1em;
+    input.checkout-disabled, input.checkout-disabled:hover {
+      background-color: lightgray;
+    }
   }
 }
 
