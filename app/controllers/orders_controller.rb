@@ -93,7 +93,6 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:credit_card_number, :expiration_date)
     elsif order_params[:pay_type] == "Purchase Order"
       params.require(:order).permit(:po_number)
-    else
     end
   end
 end
