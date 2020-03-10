@@ -1,0 +1,14 @@
+<h3>Big Books Order Received</h3>
+<p>Dear <%= @order.name %>,</p>
+
+<p>Thank you for your recent order from The Online Store of Big Books. You ordered the following items:</p>
+
+<table>
+  <tr>
+    <th colspan="2">Quantity</th>
+    <th>Description</th>
+  </tr>
+  <%= render @order.line_items %>
+</table>
+
+<p>- The Big Books Team</p>
