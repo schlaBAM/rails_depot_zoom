@@ -8,9 +8,6 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  get 'sessions/create'
-  get 'sessions/destroy'
-
   resources :line_items, :carts, :orders, :users
 
   resources :products do

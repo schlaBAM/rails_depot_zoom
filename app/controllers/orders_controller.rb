@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 class OrdersController < ApplicationController
   include CurrentCart
-  skip_before_action :authorize, only: %i[new create]
-  before_action :set_cart, only: %i[new create]
+  skip_before_action :authorize, only: [:new, :create]
+  before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_not_empty, only: :new
-  before_action :set_order, only: %i[show edit update destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
   # GET /orders.json

@@ -56,14 +56,14 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
-  rescue_from 'User::NoAdminsLeft' do |exception|
-    redirect_to users_url, notice: exception.message
+  rescue User::NoAdminsLeft => e
+    Rails.logger.error("\nERROR: [User#destroy] #{e.message}\n")
+    notice = e.message
+  else
+    notice = "User #{@user.name} was successfully deleted."
+  ensure
+    redirect_to(users_url, notice: notice)
   end
 
   private

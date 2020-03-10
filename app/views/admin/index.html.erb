@@ -1,4 +1,4 @@
-<h1>Welcome<%= ', ' + @current_user.name if @current_user %></h1>
+<h1>Welcome, <%= @current_user.name %></h1>
 
 <p>
   It's <%= Time.now.to_formatted_s(:long_ordinal) %><br>
