@@ -1,6 +1,15 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :line_items, :carts, :orders
+  get 'admin' => 'admin#index'
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  resources :line_items, :carts, :orders, :users
+
   resources :products do
     get :who_bought, on: :member
   end
