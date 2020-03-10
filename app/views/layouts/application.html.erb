@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> <%= controller.controller_name.capitalize  %> | Online Store of Big Books</title>
+  <title> <%= controller.controller_name.capitalize %> | Online Store of Big Books</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -21,10 +21,22 @@
     </div>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><%= link_to 'Products', products_url%></li>
-      <li><%= link_to 'Orders', orders_url %></li>
       <li><a href="/contact">Contact</a></li>
+      <% if session[:user_id].nil? %>
+        <li><%= link_to 'Secrets', login_path %></li>
+      <% end %>
+
     </ul>
+    <% if session[:user_id] %>
+      <nav class="logged_in_nav">
+        <ul>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Orders', orders_path %></li>
+          <li><%= link_to 'Users', users_path %></li>
+          <li><%= button_to 'Logout', logout_path, method: :delete %></li>
+        </ul>
+      </nav>
+    <% end %>
   </nav>
   <main class=' <%= controller.controller_name %>'>
     <%= yield %>
