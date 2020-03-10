@@ -18,13 +18,19 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header.main {
   text-align: center; //center on mobile
   @media (min-width: 30em) {
-    text-align:left;
+    text-align: left;
   }
   background: #282;
   margin: 0;
+
+  a:hover {
+    background-color: initial;
+  }
+
   h1 {
     display: none;
   }
@@ -47,13 +53,14 @@ header.main {
 
   nav {
     padding-bottom: 1em;
-    background: #141;
+    background: #2e402e;
     text-align: center; //mobile centered nav
 
     @media (min-width: 30em) {
       text-align: left;
       padding: 1em;
     }
+
     ul {
       list-style: none;
       margin: 0;
@@ -61,15 +68,18 @@ header.main {
       @media (min-width: 30em) {
         padding-right: 1em;
       }
+
       li {
         margin: 0;
         padding: 0.5em;
         text-transform: uppercase;
         letter-spacing: 0.354em;
+
         a {
           color: #bfb;
           text-decoration: none;
         }
+
         a:hover {
           background: none;
           color: white;
@@ -77,6 +87,7 @@ header.main {
       }
     }
   }
+
   main {
     padding: 0.5em;
   }
@@ -98,6 +109,7 @@ header.main {
     h2 {
       margin-top: 0;
     }
+
     background: white;
     border-radius: 0.5em;
     margin: 1em;
@@ -110,12 +122,14 @@ header.main {
 
 .depot_form {
   padding: 0 1em;
+
   h1 {
     font-size: 1.99em;
     line-height: 1.41em;
     margin-bottom: 0.5em;
     padding: 0;
   }
+
   input, textarea, select, option {
     border: solid thin #888;
     box-sizing: border-box;
@@ -123,9 +137,11 @@ header.main {
     padding: 0.5em;
     width: 100%;
   }
+
   label {
     padding: 0.5em 0;
   }
+
   input[type='submit'] {
     background-color: #bfb;
     border-radius: 0.354em;
@@ -135,31 +151,39 @@ header.main {
     font-weight: bold;
     padding: 0.354em 1em;
   }
+
   input[type='submit']:hover {
     background-color: #9d9;
   }
+
   .field, .actions {
     margin-bottom: 0.5em;
     padding: 0;
   }
+
   .actions {
     text-align: right;
     padding: 1em 0;
   }
+
   .field_with_errors {
     background: none;
     color: red;
     width: 100%;
+
     label {
       font-weight: bold;
     }
+
     label::before {
       content: "! ";
     }
+
     input, textarea {
       background: pink;
     }
   }
+
   #error_explanation {
     background-color: white;
     border-radius: 1em;
@@ -167,6 +191,7 @@ header.main {
     margin-bottom: 0.5em;
     padding: 0.5em;
     width: 100%;
+
     h2 {
       background: none;
       color: red;
@@ -174,8 +199,10 @@ header.main {
       line-height: 1.41em;
       padding: 1em;
     }
+
     ul {
       margin-top: 0;
+
       li {
         color: red;
         font-size: 1em;
