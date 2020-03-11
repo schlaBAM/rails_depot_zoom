@@ -8,13 +8,15 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  resources :line_items, :carts, :orders, :users
-
+  resources :users
   resources :products do
     get :who_bought, on: :member
   end
 
-  root 'store#index', as: 'store_index'
+  scope '(:locale)' do
+    resources :orders, :line_items, :carts
+    root 'store#index', as: 'store_index'
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
