@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)' do
     resources :orders, :line_items, :carts
-    root 'store#index', as: 'store_index'
+    root 'store#index', as: 'store_index', via: :all
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
